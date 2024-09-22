@@ -11,6 +11,7 @@
   justify-content: left;
   align-items: center;
   margin: 10px;
+  margin-left: 100px;
   padding: 10px;
 }
 
@@ -24,13 +25,14 @@
   margin: 10px;
   padding: 10px;
 }
+
 .categoryContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
   width: 100%;
-  padding: 25px;
+  padding: 35px;
   margin-bottom: 20px;
   border-radius: 10px;
   background-color: white;
@@ -68,4 +70,17 @@
   padding-left: 20px;
   border-radius: 10px;
   background-color: white;
+}
+
+.remove-button {
+  margin-left: 10px;
+  color: black;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px; 
+}
+
+.reqField {
+  margin-right: 30px;
 }

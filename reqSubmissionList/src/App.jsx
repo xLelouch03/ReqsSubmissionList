@@ -28,6 +28,17 @@ function App() {
     setCategories(updatedCategories);
   };
 
+  const removeCategory = (index) => {
+    const updatedCategories = categories.filter((_, i) => i !== index);
+    setCategories(updatedCategories);
+  };
+
+  const removeRequirement = (categoryIndex, reqIndex) => {
+    const updatedCategories = [...categories];
+    updatedCategories[categoryIndex].requirements = updatedCategories[categoryIndex].requirements.filter((_, i) => i !== reqIndex);
+    setCategories(updatedCategories);
+  };
+
   const printJSON = () => {
     const isEmpty = categories.length === 0 || categories.every(category => 
       !category.categoryName || category.requirements.length === 0
@@ -72,6 +83,8 @@ function App() {
               onCategoryNameChange={handleCategoryNameChange}
               onRequirementNameChange={handleRequirementNameChange}
               addRequirement={addRequirement}
+              removeCategory={removeCategory} 
+              removeRequirement={removeRequirement}
             />
           ))}
           <Button
@@ -79,6 +92,7 @@ function App() {
               marginTop: "20px",
               backgroundColor: "#4CAF50",
               border: "0px",
+              width: "25%",
             }}
             onClick={addCategory}
           >

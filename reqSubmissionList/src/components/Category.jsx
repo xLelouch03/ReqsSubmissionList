@@ -7,6 +7,8 @@ function Category({
   onCategoryNameChange,
   onRequirementNameChange,
   addRequirement,
+  removeCategory,
+  removeRequirement
 }) {
   const handleCategoryNameChange = (event) => {
     onCategoryNameChange(categoryIndex, event.target.value);
@@ -20,8 +22,8 @@ function Category({
     <>
       <div className="categoryContainer">
         <div className="mb-3 row">
-          <label className="col-sm-2 col-form-label">Category</label>
-          <div className="col-sm-4">
+          <label className="col-sm-2 col-form-label"><strong>Category</strong></label>
+          <div className="col-sm-5" style={{ display: 'flex', alignItems: 'center' }}>
             <input
               type="text"
               className="form-control border border-dark shadow-none"
@@ -29,6 +31,12 @@ function Category({
               onChange={handleCategoryNameChange}
               placeholder="Category Name"
             />
+            <button
+              onClick={() => removeCategory(categoryIndex)}
+              className="remove-button" 
+            >
+              X
+            </button>
           </div>
         </div>
 
@@ -39,6 +47,7 @@ function Category({
               reqIndex={reqIndex}
               requirement={requirement}
               onRequirementNameChange={handleRequirementNameChange}
+              removeRequirement={() => removeRequirement(categoryIndex, reqIndex)}
             />
           ))}
         </div>
@@ -48,6 +57,7 @@ function Category({
               marginTop: "20px",
               backgroundColor: "#4CAF50",
               border: "0px",
+              width: "25%"
             }}
             onClick={() => addRequirement(categoryIndex)}
           >
