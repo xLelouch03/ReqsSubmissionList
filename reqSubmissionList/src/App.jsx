@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
-import Category from './components/Category.jsx';
-import Button from './components/Button.jsx';
+import React, { useState } from "react";
+import Category from "./components/Category.jsx";
+import Button from "./components/Button.jsx";
 
 function App() {
-  const [categories, setCategories] = useState([{ categoryName: '', requirements: [''] }]);
+  const [categories, setCategories] = useState([
+    { categoryName: "", requirements: [""] },
+  ]);
 
   const addCategory = () => {
-    setCategories([...categories, { categoryName: '', requirements: [''] }]);
+    setCategories([...categories, { categoryName: "", requirements: [""] }]);
   };
 
   const addRequirement = (categoryIndex) => {
     const updatedCategories = [...categories];
-    updatedCategories[categoryIndex].requirements.push('');
+    updatedCategories[categoryIndex].requirements.push("");
     setCategories(updatedCategories);
   };
 
@@ -45,7 +47,14 @@ function App() {
               addRequirement={addRequirement}
             />
           ))}
-          <Button style={{ marginTop: '20px', backgroundColor: '#4CAF50', border: '0px' }} onClick={addCategory}>
+          <Button
+            style={{
+              marginTop: "20px",
+              backgroundColor: "#4CAF50",
+              border: "0px",
+            }}
+            onClick={addCategory}
+          >
             Add Category
           </Button>
         </div>
@@ -53,17 +62,26 @@ function App() {
         <div className="displaySection">
           <div className="requirementList">
             {categories.map((category, index) => (
-              <div key={index} style={{ marginTop: '20px' }}>
-                <strong>{category.categoryName || ''}</strong>
+              <div key={index} style={{ marginTop: "20px" }}>
+                <strong>{category.categoryName || ""}</strong>
                 {category.requirements.map((requirement, reqIndex) => (
-                  <div key={reqIndex} style={{ paddingLeft: '40px' }}>
-                    {requirement || ''}
+                  <div key={reqIndex} style={{ paddingLeft: "40px" }}>
+                    {requirement || ""}
                   </div>
                 ))}
               </div>
             ))}
             <div className="button-container">
-              <Button onClick={printJSON} style={{ marginTop: '30px', backgroundColor: '#4CAF50', border: '0px'  }}>Export</Button>
+              <Button
+                onClick={printJSON}
+                style={{
+                  marginTop: "30px",
+                  backgroundColor: "#4CAF50",
+                  border: "0px",
+                }}
+              >
+                Export
+              </Button>
             </div>
           </div>
         </div>

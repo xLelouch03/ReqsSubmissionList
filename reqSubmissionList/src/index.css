@@ -1,37 +1,35 @@
 .container {
-  background-color: rgb(147, 145, 145); 
+  background-color: rgb(147, 145, 145);
   display: flex;
   padding: 20px;
 }
 
 .categorySection {
-  flex: 2; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: left;  
-  align-items: center; 
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
   margin: 10px;
-  padding: 10px
-   
+  padding: 10px;
 }
 
 .displaySection {
-  flex: 1; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
   align-self: flex-start;
   margin: 10px;
   padding: 10px;
-  
 }
 .categoryContainer {
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: left;  
-  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 100%;
   padding: 25px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -39,10 +37,10 @@
 }
 
 .reqContainer {
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: left;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
   width: 95%;
   padding: 5px;
   margin-top: 5px;
