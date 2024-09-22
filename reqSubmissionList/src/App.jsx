@@ -29,8 +29,36 @@ function App() {
   };
 
   const printJSON = () => {
+    const isEmpty = categories.length === 0 || categories.every(category => 
+      !category.categoryName || category.requirements.length === 0
+    );
+  
+    if (isEmpty) {
+      alert("There are no categories or requirements to print.");
+      return;
+    }
+
+    const hasEmptyCategoryNames = categories.some(category => 
+      !category.categoryName || category.categoryName.trim() === ""
+    );
+
+    const hasEmptyRequirements = categories.some(category => 
+      category.requirements.some(req => !req || req.trim() === "")
+    );
+  
+    if (hasEmptyRequirements) {
+      alert("A requirement cannot be null or empty.");
+      return; 
+    }
+
+    else if (hasEmptyCategoryNames) {
+      alert("A category name cannot be null or empty.");
+      return;
+    }
+  
     console.log(JSON.stringify(categories, null, 2));
   };
+  
 
   return (
     <>
