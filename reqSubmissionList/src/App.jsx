@@ -3,12 +3,11 @@ import Category from "./components/Category.jsx";
 import Button from "./components/Button.jsx";
 
 function App() {
-  const [categories, setCategories] = useState([
-    { categoryName: "", requirements: [""] },
-  ]);
+  const [categories, setCategories] = useState([]);
+
 
   const addCategory = () => {
-    setCategories([...categories, { categoryName: "", requirements: [""] }]);
+    setCategories([...categories, { categoryName: "", requirements: [] }]);
   };
 
   const addRequirement = (categoryIndex) => {
