@@ -5,4 +5,4 @@ To run the application:
 2. Run ``npm install``
 3. Run ``npm run dev``
 
-Make sure you're on the project folder.
+Make sure you're on the project folder ``reqSubmissionList`` before running #2 and #3.
